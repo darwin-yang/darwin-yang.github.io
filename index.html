@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Darwin Yang</title>
+  <meta name="description" content="I am a Ph.D. candidate in Economics at Princeton University. My research interests are in econometrics. I am on the 2026-27 job market.">
+  <link rel="canonical" href="https://darwin-yang.github.io/">
+
+  <meta property="og:title" content="Darwin Yang | Economics">
+  <meta property="og:description" content="Ph.D. candidate in Economics at Princeton University, on the 2026-27 job market.">
+  <meta property="og:image" content="https://darwin-yang.github.io/photo_main.jpg">
+
+  <style>
+    :root {
+      --serif:  Georgia, "Times New Roman", serif;
+      --sans:   system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+      --text:   #1f2328;
+      --muted:  #5b6370;
+      --accent: #1a4f8b;
+      --navy:   #12355e;
+      --rule:   #dcdfe4;
+      --bg:     #f4f5f7;
+    }
+
+
+    /* Base */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 15px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--serif);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 20px 48px;
+    }
+
+
+    /* Top bar */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(244, 245, 247, 0.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    nav .inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+    }
+
+    nav h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    nav h1 a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    nav .links a {
+      margin-left: 22px;
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+
+    /* Photo and blurb */
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-bottom: 8px;
+    }
+
+    header img {
+      flex-shrink: 0;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+    }
+
+    .contact a {
+      margin-right: 14px;
+      white-space: nowrap;
+    }
+
+
+    /* Section headers */
+
+    h2 {
+      margin: 28px 0 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--navy);
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    h2[id] {
+      scroll-margin-top: 64px;
+    }
+
+
+    /* Papers */
+
+    .jmp,
+    .wip {
+      background: #fff;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .jmp {
+      padding: 22px 24px;
+      border-left: 5px solid var(--accent);
+      box-shadow: 0 2px 10px rgba(26, 79, 139, 0.12);
+    }
+
+    .jmp-title {
+      color: var(--navy);
+      font-size: 1.3rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .abstract {
+      margin: 10px 0 16px;
+      font-size: 0.95rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 7px 16px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 5px;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      background: var(--navy);
+      text-decoration: none;
+    }
+
+    .wip {
+      margin-bottom: 10px;
+      padding: 10px 18px;
+      border-left: 3px solid #9aa4b2;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+
+    .wip-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+
+    /* Teaching */
+
+    .course {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .course:last-child {
+      border-bottom: none;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+
+    /* Footer */
+
+    footer {
+      margin-top: 32px;
+      padding-top: 14px;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      text-align: center;
+    }
+
+
+    /* Phones */
+
+    @media (max-width: 560px) {
+      nav .inner {
+        padding: 10px 16px;
+      }
+
+      nav h1 {
+        font-size: 1.2rem;
+      }
+
+      nav .links a {
+        margin-left: 12px;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+
+      header img {
+        width: 130px;
+        height: 130px;
+      }
+
+      .contact a {
+        margin: 0 7px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <nav>
+    <div class="inner">
+      <h1><a href="#">Darwin Yang</a></h1>
+      <div class="links">
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
+        <a href="DarwinYang_CV.pdf">CV</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <header>
+      <img src="photo_main.jpg" alt="Photo of Darwin Yang">
+
+      <div>
+        <p>
+          I am a Ph.D. candidate in Economics at Princeton University.
+          My research interests are in econometrics, with a focus
+          on methods for handling unobserved heterogeneity.
+        </p>
+
+        <p>I am on the 2026-27 job market.</p>
+
+        <div class="contact">
+          <a href="mailto:dy8259@princeton.edu">dy8259@princeton.edu</a>
+          <a href="DarwinYang_CV.pdf">CV</a>
+        </div>
+      </div>
+    </header>
+
+
+    <h2 id="research">Job Market Paper</h2>
+
+    <div class="jmp">
+      <div class="jmp-title">
+        Moment Inequalities in Regressions with Incompletely Observed Covariates
+      </div>
+
+      <div class="abstract">
+        ABSTRACT:
+        In economic applications with missing or set-valued data, standard 
+        assumptions like missing-at-random are untestable and often difficult 
+        to justify. In this paper, I study identification in mean regression 
+        models with incomplete covariate data under ``worst-case'' conditions: 
+        the process determining observability is unknown and unrestricted. To 
+        make progress, I develop a new methodology inspired by the panel literature. 
+        I represent model features with minimal assumptions as unobserved heterogeneity, 
+        and I then target a minimal collection of functions which have non-negative 
+        expectations with respect to the heterogeneity. This approach turns out to be 
+        tractable, and I obtain conditional moment inequalities which completely 
+        characterize identification in the incomplete data models. The method is also 
+        versatile; I illustrate how it can be used in other settings. Finally, numerical 
+        exercises demonstrate the identification potential of the derived moment inequalities, 
+        as well as their feasibility for use in environments which are close to empirical practice.
+      </div>
+
+      <a class="btn" href="DarwinYang_JMP.pdf">Download Paper (PDF)</a>
+    </div>
+
+
+    <h2>Work in Progress</h2>
+
+    <div class="wip">
+      <div class="wip-title">
+        A Moment Problem Approach to Semiparametric Discrete Outcome Panel Models with Fixed Effects
+      </div>
+    </div>
+
+    <div class="wip">
+      <div class="wip-title">
+        Fixed Effect Functions and Structural Dynamics in Panel Logit Models
+      </div>
+    </div>
+
+
+    <h2 id="teaching">Teaching</h2>
+
+    <div>
+      <div class="course">
+        <div><strong>ECO 300: Microeconomic Theory</strong> <span class="note">(Undergraduate), Teaching Assistant</span></div>
+        <div class="note">Fall 2024, Spring 2025, Fall 2025</div>
+      </div>
+
+      <div class="course">
+        <div><strong>ECO 517: Econometric Theory I</strong> <span class="note">(Graduate), Teaching Assistant</span></div>
+        <div class="note">Fall 2023</div>
+      </div>
+    </div>
+
+
+    <footer>Last Updated: November 1, 2026</footer>
+
+  </main>
+
+</body>
+</html>
